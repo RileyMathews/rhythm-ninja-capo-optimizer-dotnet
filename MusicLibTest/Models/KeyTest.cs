@@ -29,5 +29,32 @@ namespace MusicLibTest
     {
       Assert.Throws<Exception>(() => new Key("A", 10));
     }
+
+    [Fact]
+    public void TestCanTransposeUp()
+    {
+      Key OriginalKey = Key.FromRoot("A");
+      Key NewKey = OriginalKey.TransposeUp(1);
+
+      Assert.Equal("Bb", NewKey.Root);
+    }
+
+    [Fact]
+    public void TestIsCagedKey()
+    {
+      foreach (string item in new string[] { "C", "A", "G", "E", "D" })
+      {
+        Key key = Key.FromRoot(item);
+
+        Assert.True(key.IsCagedKey());
+      }
+
+      foreach (string item in new string[] { "Bb", "B", "Db", "Eb", "F", "Gb", "Ab" })
+      {
+        Key key = Key.FromRoot(item);
+
+        Assert.False(key.IsCagedKey());
+      }
+    }
   }
 }
