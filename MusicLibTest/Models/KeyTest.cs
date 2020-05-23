@@ -9,9 +9,25 @@ namespace MusicLibTest
     [Fact]
     public void TestCanCreateKey()
     {
-      Key actual = new Key("A", 0);
+      Key actual = new Key("A", 1);
 
-      Assert.Equal("A", actual.root);
+      Assert.Equal("A", actual.Root);
+      Assert.Equal(1, actual.ChromaticIndex);
+    }
+
+    [Fact]
+    public void TestCanCreateByRoot()
+    {
+      Key actual = Key.FromRoot("A");
+
+      Assert.Equal("A", actual.Root);
+      Assert.Equal(1, actual.ChromaticIndex);
+    }
+
+    [Fact]
+    public void TestCreateInvalidKeyRaisesError()
+    {
+      Assert.Throws<Exception>(() => new Key("A", 10));
     }
   }
 }
