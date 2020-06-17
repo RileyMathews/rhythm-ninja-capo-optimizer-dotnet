@@ -4,13 +4,13 @@ namespace MusicLib
   {
     public Song OriginalSong;
     public Song NewSong;
-    public int StepsUp;
+    public int StepsDown;
 
-    public Transposition(Song originalSong, int stepsUp)
+    public Transposition(Song originalSong, int stepsDown)
     {
       OriginalSong = originalSong;
-      StepsUp = stepsUp;
-      NewSong = originalSong.TransposeUp(stepsUp);
+      StepsDown = stepsDown;
+      NewSong = originalSong.TranposeDown(stepsDown);
     }
   }
 }

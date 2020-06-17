@@ -33,6 +33,13 @@ namespace MusicLib
       return FromIndex(TransposeSteps);
     }
 
+    public Key TransposeDown(int steps)
+    {
+      int TransposeSteps = this.ChromaticIndex - steps;
+      while(TransposeSteps < 0) { TransposeSteps += 12; }
+      return FromIndex(TransposeSteps);
+    }
+
     public bool IsCagedKey()
     {
       string[] strArr = { "C", "A", "G", "E", "D" };

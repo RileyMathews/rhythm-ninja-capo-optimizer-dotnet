@@ -17,5 +17,11 @@ namespace MusicLib
       List<Key> newKeys = Keys.ConvertAll(key => key.TransposeUp(stepsUp));
       return new Song(newKeys);
     }
+
+    public Song TranposeDown(int stepsDown)
+    {
+      List<Key> newKeys = Keys.ConvertAll(key => key.TransposeDown(stepsDown));
+      return new Song(newKeys);
+    }
   }
 }
