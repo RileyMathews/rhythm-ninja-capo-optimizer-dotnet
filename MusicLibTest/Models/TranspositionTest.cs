@@ -17,7 +17,7 @@ namespace MusicLibTest
       Transposition actual = new Transposition(originalSong, 2);
 
       Assert.Equal("A", actual.OriginalSong.Keys[0].Root);
-      Assert.Equal("B", actual.NewSong.Keys[0].Root);
+      Assert.Equal("G", actual.NewSong.Keys[0].Root);
     }
   }
 }
