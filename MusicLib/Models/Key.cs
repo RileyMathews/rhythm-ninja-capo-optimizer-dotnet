@@ -40,12 +40,6 @@ namespace MusicLib
       return FromIndex(TransposeSteps);
     }
 
-    public bool IsCagedKey()
-    {
-      string[] strArr = { "C", "A", "G", "E", "D" };
-      return strArr.Contains(this.Root);
-    }
-
     private Key FromIndex(int index)
     {
       return new Key(IndexToRoot[index], index);
